@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - form</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+</head>
+<body class="container">
+    
+    <div class="container">  
+
+        <!-- Adicionando o onsubmit para usar a classe controller -->
+        <form id="contact" onsubmit="dadosController.adiciona(event)" action="" method="post">
+          
+          <h3>Formulário de contato</h3>
+          
+          <h4>Nos contate.</h4>
+          <fieldset>
+            <input placeholder="Seu nome" type="text" id="nome" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Seu endereço de email" type="email" id="email"  tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Seu número de telefone" type="tel" id="telefone" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Seu website" type="url" id="website" tabindex="4">
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Digite alguma coisa aqui..." tabindex="5" id="campoTexto" required></textarea>
+          </fieldset>
+          
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+          
+          <p class="copyright">Desenvolvido por <a href="https://sobtic.com.br" target="_blank" title="Colorlib">sobTIC</a></p>
+        
+        </form>
+      </div>
+    
+      <!-- Importando as classes -->
+    <script src="js/app/controllers/DadosController.js"></script>
+    <script src="js/app/models/ListaDados.js"></script>
+    <script src="js/app/models/Dados.js"></script>
+    
+    <script>
+        //var = Acessa as variáveis fora do escopo do bloco onde foi definida
+        //let = Acessa as variáveis somente dentro do escopo do bloco onde foi definida
+        let dadosController = new DadosController();
+    </script>
+</body>
+</html>
+
+
+
