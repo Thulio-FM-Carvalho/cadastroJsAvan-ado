@@ -4,18 +4,21 @@ class DadosController {
 
     //Buscando os elementos do DOM e adicionando no construtor da classe 
     constructor() {
+        
         //Associando o docuemnt ao querySelector
         let $ = document.querySelector.bind(document);
 
+        //Fazendo com que os elementos do DOM se torne uam propriedade da classe
         this._inputNome = $("#nome");
         this._inputEmail = $("#email");
         this._inputTelefone = $("#telefone");
         this._inputWebsite = $("#website");
-        this._inputTextArea = $("#campoTexto");
+        this._inputCampoTexto = $("#campoTexto");
 
         this._listaDados = new ListaDados();
     }
 
+    //Método chamado ao clicar no botão "Enviar"
     adiciona(evento){
 
         event.preventDefault();
@@ -27,11 +30,11 @@ class DadosController {
     criaDados(){
         return new Dados
             (
-                this._inputNome,
-                this._inputEmail,
-                this._inputTelefone,
-                this._inputWebsite,
-                this._inputTextArea
+                this._inputNome.value,
+                this._inputEmail.value,
+                this._inputTelefone.value,
+                this._inputWebsite.value,
+                this._inputCampoTexto.value
             )
     }
 }
